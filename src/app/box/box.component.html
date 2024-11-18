@@ -1,0 +1,17 @@
+<ng-container *ngIf="!boxId">
+  <div class="box">
+    <div class="header">
+      <p>{{ index + 1 }}</p>
+      <p class="cursor-pointer" (click)="onDeleteBox()">X</p>
+    </div>
+    <div class="body">
+      <div class="title cursor-pointer" (click)="navigateToBox()">
+        {{ title }}
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="boxId">
+  <button (click)="navigateBack()">Back to List</button>
+  <h1>{{ boxTitle }}</h1>
+</ng-container>

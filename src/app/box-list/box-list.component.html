@@ -1,0 +1,21 @@
+<div class="container">
+  <input [(ngModel)]="title" type="text" />
+  <button (click)="onAddBox()">Add Square</button>
+  <div
+    class="box-container"
+    fxLayout.xs="column"
+    fxLayout="row wrap"
+    fxLayoutAlign.xs="center center"
+    fxLayoutAlign="start center"
+    fxLayoutGap="20px"
+  >
+    <ng-container *ngFor="let box of boxes; let i = index">
+      <app-box
+        [id]="box.id"
+        [title]="box.title"
+        [index]="i"
+        (delete)="onDeleteBox()"
+      ></app-box>
+    </ng-container>
+  </div>
+</div>
